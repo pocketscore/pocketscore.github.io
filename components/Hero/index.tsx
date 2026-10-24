@@ -31,34 +31,50 @@ export const Hero: React.FC<HeroProps> = ({ screenshots = [], apkUrl = '', versi
     return (
         <section className={styles.hero}>
             <div className={styles.content}>
-                {version && <div className={styles.badge}>PocketScore {version}</div>}
-
-                <div className={styles.brandHero}>
-                    <div className={styles.appIconWrapper}>
-                        <svg width="64" height="64" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" className={styles.appIcon}>
-                            <rect width="32" height="32" rx="8" fill="var(--primary)" />
-                            <path
-                                d="M9,8h14c1.1,0 2,0.9 2,2v7c0,5.5 -4.5,9 -9,9s-9,-3.5 -9,-9V10c0,-1.1 0.9,-2 2,-2zM13,12v6h1v-6h-1zM15,12v6h1v-6h-1zM17,12v6h1v-6h-1zM19,12v6h1v-6h-1zM10.5,17.5l9,-5l0.5,0.9l-9,5L10.5,17.5z"
-                                fill="white"
-                                fillRule="evenodd"
-                            />
-                        </svg>
+                {version && (
+                    <div className={styles.versionTag}>
+                        <span className={styles.versionDot}></span>
+                        <span>v{version.replace('v', '')}</span>
                     </div>
-                    <h1 className="m3-display-large">Smart Scorekeeping for Modern Games</h1>
-                </div>
+                )}
 
-                <p className="m3-body-large">
-                    PocketScore is a modern, expressive, and user-friendly score-keeping
-                    application for Android. Experience seamless game nights with
-                    real-time insights and beautiful Material 3 design.
+                <h1 className={styles.heading}>
+                    <span className={styles.headingAccent}>Track Every Point</span>
+                    <br />
+                    Game Night, Perfected
+                </h1>
+
+                <p className={styles.description}>
+                    A beautifully crafted Android app for keeping score across any game. 
+                    Built with Material 3 Expressive design for effortless game nights with 
+                    friends and family.
                 </p>
+
                 <div className={styles.actions}>
                     <Button variant="primary" onClick={handleDownload} className={styles.downloadCall}>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ marginRight: '8px' }}>
+                            <path d="M10 2V14M10 14L5 9M10 14L15 9M3 18H17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
                         Download APK
                     </Button>
                     <Button variant="outlined" onClick={() => window.open('https://github.com/mwarrc/PocketScore')}>
-                        View Source
+                        View on GitHub
                     </Button>
+                </div>
+
+                <div className={styles.features}>
+                    <div className={styles.featureItem}>
+                        <div className={styles.featureDot}></div>
+                        <span>Multiple game modes</span>
+                    </div>
+                    <div className={styles.featureItem}>
+                        <div className={styles.featureDot}></div>
+                        <span>Real-time tracking</span>
+                    </div>
+                    <div className={styles.featureItem}>
+                        <div className={styles.featureDot}></div>
+                        <span>Beautiful Material 3 UI</span>
+                    </div>
                 </div>
             </div>
             <div className={styles.visual}>

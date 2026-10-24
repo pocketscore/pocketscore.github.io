@@ -1,65 +1,155 @@
 .container {
-    margin-top: 48px;
+    margin-top: 64px;
     width: 100%;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 24px;
-    margin-top: 24px;
+.headerSection {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.headerSection h2 {
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    color: var(--on-surface-variant);
+    font-size: 18px;
+    margin: 0;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .releaseCard {
     display: flex;
     flex-direction: column;
+    padding: 32px;
+    transition: all 0.3s var(--m3-motion-standard);
+    width: 100%;
+}
+
+.releaseCard:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--m3-elevation-2);
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 12px;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.tagGroup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 .tag {
     background-color: var(--primary-container);
     color: var(--on-primary-container);
-    padding: 4px 12px;
-    border-radius: var(--m3-shape-small);
-    font-size: 12px;
+    padding: 6px 16px;
+    border-radius: var(--m3-shape-full);
+    font-size: 13px;
     font-weight: 600;
 }
 
+.latestBadge {
+    background-color: var(--tertiary-container);
+    color: var(--on-tertiary-container);
+    padding: 4px 10px;
+    border-radius: var(--m3-shape-full);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
 .date {
-    font-size: 12px;
+    font-size: 14px;
     color: var(--on-surface-variant);
-    opacity: 0.7;
 }
 
 .title {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: 600;
     margin: 0 0 12px 0;
     color: var(--on-surface);
 }
 
-.description {
-    font-size: 14px;
-    line-height: 20px;
-    color: var(--on-surface-variant);
-    margin-bottom: 24px;
+.descriptionContainer {
+    margin-bottom: 28px;
     flex-grow: 1;
+}
+
+.description {
+    font-size: 15px;
+    line-height: 26px;
+    color: var(--on-surface-variant);
+    margin: 0 0 12px 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.showMoreButton {
+    background: none;
+    border: none;
+    color: var(--primary);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 4px 0;
+    font-family: inherit;
+    transition: opacity 0.2s;
+}
+
+.showMoreButton:hover {
+    opacity: 0.8;
+    text-decoration: underline;
 }
 
 .actions {
     display: flex;
-    gap: 8px;
+    gap: 12px;
     flex-wrap: wrap;
+    margin-top: auto;
 }
 
 .empty {
     text-align: center;
-    padding: 48px;
+    padding: 64px 32px;
     color: var(--on-surface-variant);
+    background-color: var(--surface-variant);
+    border-radius: var(--m3-shape-large);
+}
+
+@media (max-width: 640px) {
+    .container {
+        margin-top: 48px;
+    }
+
+    .headerSection {
+        text-align: left;
+        margin-bottom: 32px;
+    }
+
+    .releaseCard {
+        padding: 24px;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .title {
+        font-size: 22px;
+    }
 }

@@ -2,7 +2,6 @@ import { getAllReleases, getScreenshots, getLatestApkUrl, getLatestRelease } fro
 import { Navbar } from "../components/Navbar";
 import { Hero } from "../components/Hero";
 import { ReleaseList } from "../components/ReleaseList";
-import { Projects } from "../components/Projects";
 import styles from "./page.module.css";
 
 export default async function Home() {
@@ -26,8 +25,6 @@ export default async function Home() {
           <section id="releases" className={styles.section}>
             <ReleaseList releases={releases} />
           </section>
-
-          <Projects />
         </div>
 
         <footer className={styles.footer}>

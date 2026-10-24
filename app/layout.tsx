@@ -13,7 +13,7 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://mwarrc.github.io/pscore'),
+  metadataBase: new URL('https://pocketscore.github.io'),
   title: "PocketScore | Smart Scorekeeping",
   description: "Modern, expressive, and user-friendly Material 3 scorekeeping app for Android. Track scores, view insights, and celebrate victories.",
   keywords: ["scorekeeping", "android", "material 3", "pocketscore", "gaming", "board games"],
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "PocketScore | Modern Scorekeeping",
     description: "The most expressive scorekeeping app for Android.",
-    url: "https://mwarrc.github.io/pscore",
+    url: "https://pocketscore.github.io",
     siteName: "PocketScore",
     images: [
       {
