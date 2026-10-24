@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "next build && powershell -Command \"New-Item -ItemType File -Path out/.nojekyll -Force | Out-Null\" && gh-pages -d out -t"
+    "deploy": "next build"
   },
   "dependencies": {
     "next": "16.1.6",
