@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://pocketscore.github.io/",
   },
+  verification: {
+    google: "FPOdPB60Mm53h2uJ_VoYBLYeKhSfpYNAgcho5W4n6hs",
+  },
   openGraph: {
     title: "PocketScore | Modern Scorekeeping",
     description: "The most expressive scorekeeping app for Android.",
