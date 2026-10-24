@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     canonical: "https://pocketscore.github.io/",
   },
   verification: {
-    google: "FPOdPB60Mm53h2uJ_VoYBLYeKhSfpYNAgcho5W4n6hs",
+    google: "QvMozSBFVX6Nmvq-kK_ujLQWNaJMp6jiBEN2ovdECBY",
   },
   openGraph: {
     title: "PocketScore | Modern Scorekeeping",
