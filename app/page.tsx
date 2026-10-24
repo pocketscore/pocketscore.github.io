@@ -34,10 +34,10 @@ export default async function Home() {
           <div className={`m3-container ${styles.footerContent}`}>
             <div className={styles.socials}>
               <a href="https://github.com/mwarrc" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>GitHub</a>
-              <a href="https://x.com/mwarrc" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>X</a>
-              <a href="https://instagram.com/mwarrc" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>Instagram</a>
+             
+              <a href="https://instagram.com/mwaririclinton" target="_blank" rel="noopener noreferrer" className={styles.socialLink}>Instagram</a>
             </div>
-            <p>© 2026 PocketScore Project by <a href="https://github.com/mwarrc" target="_blank" rel="noopener noreferrer" className={styles.brandLink}>mwarrc</a>. Built with Material 3 Expressive.</p>
+            <p>© 2026 PocketScore Project by <a href="https://github.com/mwarrc" target="_blank" rel="noopener noreferrer" className={styles.brandLink}>Mwariri Clinton</a>. Built with Material 3 Expressive.</p>
           </div>
         </footer>
       </main>
