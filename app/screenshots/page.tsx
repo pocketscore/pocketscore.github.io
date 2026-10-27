@@ -1,7 +1,15 @@
 import { getScreenshots, getLatestApkUrl } from "../../lib/github";
 import { Navbar } from "../../components/Navbar";
+import { pageMetadata } from "../../lib/seo";
 import Image from "next/image";
 import styles from "./screenshots.module.css";
+
+export const metadata = pageMetadata({
+  title: "Screenshots | PocketScore",
+  description:
+    "Preview PocketScore for Android. Browse screenshots of the Material 3 Expressive scorekeeping interface and game night features.",
+  path: "/screenshots",
+});
 
 export default async function ScreenshotsPage() {
     const screenshots = await getScreenshots();

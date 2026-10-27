@@ -1,12 +1,14 @@
 import type { MetadataRoute } from "next";
+import { SITE_URL } from "../lib/seo";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://pocketscore.github.io";
+  const lastModified = new Date();
+
   return [
-    { url: `${base}/`, lastModified: new Date(), changeFrequency: "weekly", priority: 1 },
-    { url: `${base}/changelog`, lastModified: new Date(), changeFrequency: "weekly", priority: 0.8 },
-    { url: `${base}/screenshots`, lastModified: new Date(), changeFrequency: "monthly", priority: 0.7 },
+    { url: SITE_URL, lastModified, changeFrequency: "weekly", priority: 1 },
+    { url: `${SITE_URL}/changelog`, lastModified, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${SITE_URL}/screenshots`, lastModified, changeFrequency: "monthly", priority: 0.7 },
   ];
 }

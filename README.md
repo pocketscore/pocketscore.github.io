@@ -2,7 +2,7 @@
 
 The official website for **PocketScore** - a modern, expressive Material 3 scorekeeping app for Android.
 
-🌐 **Live Site**: [mwarrc.github.io/pscore](https://mwarrc.github.io/pscore)
+🌐 **Live Site**: [pocketscore.github.io](https://pocketscore.github.io)
 
 ## Tech Stack
 
@@ -91,18 +91,25 @@ pocketscore_web/
 
 ## Configuration
 
-The site is configured for GitHub Pages deployment at `/pscore`:
+The site is deployed as a GitHub Pages **organization site** at the domain root:
 
-- **Base Path**: `/pscore` (production only)
-- **Asset Prefix**: `/pscore/` (production only)
+- **Site URL**: `https://pocketscore.github.io`
 - **Output**: Static export (`output: 'export'`)
+- **Publish branch**: `gh-pages` (deployed with `npm run deploy`)
 
-To change the deployment path, update `next.config.ts`:
+The canonical origin lives in `lib/seo.ts` (`SITE_URL`). Update it there (and in
+`next.config.ts`, if a `basePath` is ever needed) if the site moves to a custom
+domain.
 
-```typescript
-basePath: isProd ? '/your-repo-name' : '',
-assetPrefix: isProd ? '/your-repo-name/' : '',
-```
+### SEO
+
+- Per-page titles, descriptions, and **canonical URLs** are generated with
+  `pageMetadata()` from `lib/seo.ts`. Always add metadata to new pages.
+- `app/sitemap.ts` generates `/sitemap.xml`; `app/robots.ts` generates
+  `/robots.txt`.
+- After deploying, submit `https://pocketscore.github.io/sitemap.xml` in
+  [Google Search Console](https://search.google.com/search-console) under the
+  `https://pocketscore.github.io/` URL-prefix property.
 
 ## Learn More
 

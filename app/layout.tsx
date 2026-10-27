@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter, Outfit } from "next/font/google";
+import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "../lib/seo";
 import "./globals.css";
 
 const inter = Inter({
@@ -13,27 +14,30 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://pocketscore.github.io'),
-  title: "PocketScore | Smart Scorekeeping",
-  description: "Modern, expressive, and user-friendly Material 3 scorekeeping app for Android. Track scores, view insights, and celebrate victories.",
-  keywords: ["scorekeeping", "android", "material 3", "pocketscore", "gaming", "board games"],
-  authors: [{ name: "PocketScore", url: "https://github.com/pocketscore" }],
-  alternates: {
-    canonical: "https://pocketscore.github.io/",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} | Smart Scorekeeping for Android`,
+    template: `%s | ${SITE_NAME}`,
   },
+  description: SITE_DESCRIPTION,
+  keywords: ["scorekeeping", "android", "material 3", "pocketscore", "gaming", "board games"],
+  authors: [{ name: "PocketScore", url: "https://github.com/mwarrc" }],
+  creator: "Mwariri Clinton",
+  applicationName: SITE_NAME,
+  category: "utilities",
   verification: {
     google: "QvMozSBFVX6Nmvq-kK_ujLQWNaJMp6jiBEN2ovdECBY",
   },
   openGraph: {
-    title: "PocketScore | Modern Scorekeeping",
+    title: `${SITE_NAME} | Modern Scorekeeping`,
     description: "The most expressive scorekeeping app for Android.",
-    url: "https://pocketscore.github.io",
-    siteName: "PocketScore",
+    url: SITE_URL,
+    siteName: SITE_NAME,
     images: [
       {
-        url: "/logo.svg",
-        width: 800,
-        height: 800,
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
         alt: "PocketScore Logo",
       },
     ],
@@ -42,10 +46,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "PocketScore | Modern Scorekeeping",
+    title: `${SITE_NAME} | Modern Scorekeeping`,
     description: "The most expressive scorekeeping app for Android.",
     creator: "@pocketscore",
-    images: ["/logo.svg"],
+    images: ["/og-image.png"],
   },
   icons: {
     icon: "/icon.svg",

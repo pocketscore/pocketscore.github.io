@@ -2,7 +2,15 @@ import { getAllReleases, getScreenshots, getLatestApkUrl, getLatestRelease } fro
 import { Navbar } from "../components/Navbar";
 import { Hero } from "../components/Hero";
 import { ReleaseList } from "../components/ReleaseList";
+import { pageMetadata } from "../lib/seo";
 import styles from "./page.module.css";
+
+export const metadata = pageMetadata({
+  title: "PocketScore | Smart Scorekeeping for Android",
+  description:
+    "Download PocketScore, a modern Material 3 scorekeeping app for Android. Track scores for any game, follow release notes, and see the app in action.",
+  path: "/",
+});
 
 export default async function Home() {
   const [releases, screenshots, apkUrl, latestRelease] = await Promise.all([

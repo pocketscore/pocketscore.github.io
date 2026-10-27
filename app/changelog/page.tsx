@@ -1,8 +1,16 @@
 import { getChangelog, getLatestApkUrl } from "../../lib/github";
 import { Navbar } from "../../components/Navbar";
+import { pageMetadata } from "../../lib/seo";
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import styles from "./changelog.module.css";
+
+export const metadata = pageMetadata({
+  title: "Changelog | PocketScore",
+  description:
+    "Read the PocketScore Android changelog. See every new feature, improvement, and bug fix in each release.",
+  path: "/changelog",
+});
 
 export default async function ChangelogPage() {
     const changelog = await getChangelog();
@@ -20,7 +28,13 @@ export default async function ChangelogPage() {
 
                     <div className={styles.content}>
                         <div className={styles.markdown}>
-                            <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                            <ReactMarkdown
+                                remarkPlugins={[remarkGfm]}
+                                components={{
+                                    // Keep a single <h1> on the page (the page header above).
+                                    h1: ({ node: _node, ...props }) => <h2 {...props} />,
+                                }}
+                            >
                                 {changelog}
                             </ReactMarkdown>
                         </div>
