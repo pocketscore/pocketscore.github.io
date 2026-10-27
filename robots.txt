@@ -1,4 +1,5 @@
 User-Agent: *
 Allow: /
 
+Host: https://pocketscore.github.io
 Sitemap: https://pocketscore.github.io/sitemap.xml
